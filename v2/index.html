@@ -82,6 +82,8 @@
       z-index: 1;
     }
 
+
+
     .topbar {
       display: flex;
       justify-content: space-between;
@@ -107,6 +109,32 @@
       text-decoration: none;
     }
 
+.signal-line {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 16px;
+width: 100%;
+margin: 28px 0 36px;
+opacity: 0.8;
+}
+
+.signal-line::before,
+.signal-line::after {
+content: "";
+flex: 1 1 auto;
+height: 1px;
+background: linear-gradient(to right, transparent, var(--line), transparent);
+}
+
+.signal-line span {
+font-size: 12px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--muted);
+white-space: nowrap;
+}
+
 .hero {
 display: grid;
 grid-template-columns: 1fr;
@@ -118,22 +146,42 @@ position: relative;
 overflow: hidden;    
 }
 .hero::after {
-content: "";
-position: absolute;
-inset: 0;
-background-image: url("assets/0-Cover-Starfield.png");
-background-repeat: no-repeat;
-background-size: 420px 420px;
-background-position: right 30px top 10px;
-opacity: 0.22;
-pointer-events: none;
-z-index: 0;
-filter: saturate(1.05);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/0-Cover-Starfield.png");
+  background-repeat: no-repeat;
+  background-size: 700px 700px;
+  background-position: right -120px top -40px;
+  opacity: 0.18;
+  /* This is the key fix */
+  mask-image: radial-gradient(circle at 75% 40%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
+  -webkit-mask-image: radial-gradient(circle at 75% 40%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
+  pointer-events: none;
+  z-index: 0;
 }
 .hero > div {
 position: relative;
 z-index: 1;
 }
+.hero-signal {
+margin-top: 18px;
+font-size: 13px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(--muted);
+opacity: 0.65;
+}
+.signal-line {
+text-align: center;
+font-size: 12px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(--muted);
+margin: 28px 0;
+opacity: 0.7;
+}
+
     .eyebrow {
       margin: 0 0 12px;
       color: var(--soft);
@@ -403,7 +451,7 @@ padding-right: 16px;
 .hero::after {
 background-size: 260px 260px;
 background-position: center bottom 10px;
-opacity: 0.18;
+opacity: 0.14;
 }
 .hero {
 grid-template-columns: 1fr;
@@ -483,7 +531,6 @@ margin: 4px 0 0;
 	<section class="hero">
   <div>
     <h1>The Scrooge Dilemma</h1>
-
     <p>
       A ghost story of civilization, and a working inquiry into how dynamic systems emerge, adapt, and think. 
     </p>
@@ -492,15 +539,12 @@ margin: 4px 0 0;
       <a class="btn primary" href="/scrooge">Get the Book</a>
       <a class="btn secondary" href="#papers">Explore the Papers</a>
 <a class="btn secondary" href="https://andrewjcrook.substack.com/" target="_blank">Enter the Work</a>
-
     </div>
-
-    <p class="eyebrow" style="margin-top:20px;">
-      Quiet signal, larger arc.
-    </p>
-  </div>
-
+</div>
 	</section>
+<div class="signal-line">
+<span>Quiet signal, larger arc.</span>
+</div>
 
     <section id="featured" class="section">
       <p class="section-kicker">Current Signal</p>
@@ -612,7 +656,7 @@ margin: 4px 0 0;
       <span></span>
       <span>General Purpose Dynamic Systems</span>
       <span></span>
-      <span>Protect the children. The future is serious play. </span>
+      <span>Protect play. Expand possibility.</span>
     </footer>
   </main>
 </body>
