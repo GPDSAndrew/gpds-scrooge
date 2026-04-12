@@ -149,16 +149,33 @@ overflow: hidden;
   content: "";
   position: absolute;
   inset: 0;
+
   background-image: url("assets/0-Cover-Starfield.png");
   background-repeat: no-repeat;
-  background-size: 700px 700px;
-  background-position: right -120px top -40px;
+  background-size: 760px 760px;
+  background-position: right -140px top -60px;
+
   opacity: 0.18;
-  /* This is the key fix */
-  mask-image: radial-gradient(circle at 75% 40%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
-  -webkit-mask-image: radial-gradient(circle at 75% 40%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 75%);
   pointer-events: none;
   z-index: 0;
+
+  /* curved left edge */
+  mask-image: radial-gradient(circle at 82% 42%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 43%,
+    rgba(0,0,0,0.92) 52%,
+    rgba(0,0,0,0.55) 64%,
+    rgba(0,0,0,0.12) 74%,
+    rgba(0,0,0,0) 80%);
+  -webkit-mask-image: radial-gradient(circle at 82% 42%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,1) 43%,
+    rgba(0,0,0,0.92) 52%,
+    rgba(0,0,0,0.55) 64%,
+    rgba(0,0,0,0.12) 74%,
+    rgba(0,0,0,0) 80%);
+
+  filter: saturate(1.05);
 }
 .hero > div {
 position: relative;
