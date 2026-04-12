@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GPDS — General Purpose Dynamic Systems. Home of The Scrooge Dilemma, its paper series, and related signal." />
+  <meta name="keywords" content="Scrooge Dilemma, GPDS, General Purpose Dynamic Systems, thermodynamics, phase space, complex systems, dissipative structures, ResearchGate, Substack" />
+  <meta property="og:title" content="GPDS — The Scrooge Dilemma and Papers" />
+  <meta property="og:description" content="A ghost story of civilization, and a working inquiry into how systems think, adapt, and collapse." />
+  <meta property="og:type" content="website" />
+  <title>GPDS — The Scrooge Dilemma and Papers</title>
+
+  <style>
+    :root {
+      --bg: #05070b;
+      --panel: rgba(255,255,255,0.04);
+      --panel-2: rgba(255,255,255,0.03);
+      --ink: #edf2f7;
+      --muted: #b8c1cc;
+      --soft: #8d98a7;
+      --line: rgba(255,255,255,0.10);
+      --link: #9ec8ff;
+      --link-hover: #c7dfff;
+      --btn-bg: #edf2f7;
+      --btn-ink: #0c1117;
+      --btn-alt-bg: transparent;
+      --btn-alt-ink: #edf2f7;
+      --glow: 0 0 60px rgba(255,255,255,0.08);
+      --max: 1080px;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 12%, rgba(180, 210, 255, 0.10), transparent 22%),
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.06), transparent 12%),
+        linear-gradient(180deg, #06080d 0%, #05070b 48%, #070a10 100%);
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 78% 14%, rgba(255,255,255,0.85) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 68% 28%, rgba(255,255,255,0.8) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 24% 30%, rgba(255,255,255,0.7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 86% 38%, rgba(255,255,255,0.75) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 16% 55%, rgba(255,255,255,0.6) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 72% 60%, rgba(255,255,255,0.65) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 40% 72%, rgba(255,255,255,0.7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 82% 82%, rgba(255,255,255,0.55) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 22% 88%, rgba(255,255,255,0.5) 0 1px, transparent 1.5px);
+      opacity: 0.35;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 0 20px;
+      color: var(--soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      color: var(--soft);
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 16px 0 0;
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 32ch;
+    }
+
+    .hero-art {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 18px;
+      box-shadow: var(--glow);
+      justify-self: end;
+      width: min(360px, 100%);
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .hero-art img,
+    .paper-art img,
+    .series-card img,
+    .book-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      transition: transform 0.08s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      background: var(--btn-bg);
+      color: var(--btn-ink);
+    }
+
+    .btn.secondary {
+      background: var(--btn-alt-bg);
+      color: var(--btn-alt-ink);
+    }
+
+    .section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.1;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 65ch;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .feature-grid,
+    .book-grid,
+    .signal-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .paper-art {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--glow);
+      aspect-ratio: 1 / 1;
+      align-self: start;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .meta,
+    .small {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--soft);
+    }
+
+    .doi {
+      word-break: break-word;
+      margin-top: 12px;
+    }
+
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .series-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: var(--panel);
+      min-height: 100%;
+    }
+
+    .series-card .thumb {
+      aspect-ratio: 4 / 5;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #020305;
+    }
+
+    .series-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .series-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .series-card .links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    .book-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      aspect-ratio: 4 / 5;
+      box-shadow: var(--glow);
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .signal-item {
+      padding: 16px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .signal-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    footer {
+      padding-top: 28px;
+      color: var(--soft);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+    }
+
+    @media (max-width: 960px) {
+      .series-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero,
+      .feature-grid,
+      .book-grid,
+      .signal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        justify-self: start;
+        width: min(280px, 100%);
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .series-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .hero p,
+      .lede {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div>GPDS</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#featured">Current Signal</a>
+        <a href="#papers">Papers</a>
+        <a href="/scrooge">The Book</a>
+        <a href="#current-work">Substack</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">General Purpose Dynamic Systems</p>
+        <h1>Quiet signal,<br/>larger arc.</h1>
+        <p>
+          A ghost story of civilization, and a working inquiry into how systems think, adapt, and collapse.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/scrooge">Read the Book</a>
+          <a class="btn secondary" href="#papers">View the Papers</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="0. Cover Starfield.png" alt="North star field cover art" />
+      </div>
+    </section>
+
+    <section id="featured" class="section">
+      <p class="section-kicker">Current Signal</p>
+      <h2>The Ghost of Yet to Come: The Game of Fate</h2>
+      <p class="lede">
+        The future is not fixed. It is a field whose possibilities narrow as systems lose the capacity to adjust their trajectory within it.
+      </p>
+
+      <div class="feature-grid">
+        <div class="paper-art">
+          <img src="4. Yet to Come Eclipse.png" alt="Paper 4 eclipse cover art" />
+        </div>
+        <div class="card">
+          <p>
+            Paper 4 translates the unease of Dickens’ final ghost into a thermodynamic reading of narrowing trajectories, probabilistic constraint, and the felt illusion of fate.
+          </p>
+          <p>
+            It sits between the witness of the present and the agency to come, holding the reader at the threshold where futures begin to feel inevitable from within a limited frame.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.researchgate.net/publication/402553642_Scrooge_Dilemma-Ghost_of_Yet_to_Come-The_Game_of_Fate" target="_blank" rel="noopener">Read on ResearchGate</a>
+            <a class="btn secondary" href="https://doi.org/10.13140/RG.2.2.11762.77762" target="_blank" rel="noopener">Open DOI</a>
+          </div>
+          <p class="doi small">
+            DOI: <a href="https://doi.org/10.13140/RG.2.2.11762.77762" target="_blank" rel="noopener">10.13140/RG.2.2.11762.77762</a>
+          </p>
+          <p class="meta">Preprint · Full-text available · March 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="papers" class="section">
+      <p class="section-kicker">Paper Sequence</p>
+      <h2>The five-paper arc</h2>
+      <p class="lede">
+        A quiet sequence of essays moving from warning and memory through witness, constraint, and agency.
+      </p>
+
+      <div class="series-grid">
+        <article class="series-card">
+          <div class="thumb"><img src="1. Marley Chain.png" alt="Marley chain cover art" /></div>
+          <h3>1. Marley</h3>
+          <p>The warning. Constraint appears before collapse is recognized.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399198075" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="2. Past fossile.png" alt="Past fossil leaf cover art" /></div>
+          <h3>2. Past</h3>
+          <p>Why we forget. Memory, continuity, and the cost of civilizational amnesia.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399466440" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="3. Present Cloud.png" alt="Present cloud cover art" /></div>
+          <h3>3. Present</h3>
+          <p>Witnessing. The observer learns to see before reaching for war.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399797436_The_Present_Ghost_Witness_not_War" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="4. Yet to Come Eclipse.png" alt="Future eclipse cover art" /></div>
+          <h3>4. Future</h3>
+          <p>Fate as narrowing trajectories in phase space.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/402553642_Scrooge_Dilemma-Ghost_of_Yet_to_Come-The_Game_of_Fate" target="_blank" rel="noopener">ResearchGate</a>
+            <a href="https://doi.org/10.13140/RG.2.2.11762.77762" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="5. End of It Candle.png" alt="Agency candle cover art" /></div>
+          <h3>5. End of It</h3>
+          <p>Forthcoming. The return of local agency, fragile and directional.</p>
+          <div class="links">
+            <span class="small">Coming soon</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-kicker">The Book</p>
+      <h2>The Scrooge Dilemma — First Edition</h2>
+      <p class="lede">
+        The original narrative anchor. A ghost story of civilization, written for humans and released with machine notes.
+      </p>
+      <div class="book-grid">
+        <div class="book-card">
+          <img src="0. Cover art (north star).png" alt="The Scrooge Dilemma north star cover art" />
+        </div>
+        <div class="card">
+          <p>
+            This is not a retelling of Dickens’ story. It is an adventure across time, built to preserve continuity, witness, and the moral memory that optimization alone cannot hold.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="/scrooge">Open /scrooge</a>
+            <a class="btn secondary" href="/Scrooge_Dilemma.pdf" download>Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="current-work" class="section">
+      <p class="section-kicker">Current Work</p>
+      <h2>Applied thinking, case studies, and ongoing signal</h2>
+      <p class="lede">
+        ResearchGate carries the papers. Substack carries the live edge: interpretation, practical cases, and the unfolding inquiry into how people learn to think with AI.
+      </p>
+      <div class="signal-grid">
+        <div class="card signal-list">
+          <div class="signal-item">
+            <strong>Substack</strong>
+            <p>Long-form writing, active interpretation, and early case-study signal.</p>
+            <a href="https://andrewjcrook.substack.com/" target="_blank" rel="noopener">Open Substack</a>
+          </div>
+          <div class="signal-item">
+            <strong>ResearchGate</strong>
+            <p>Papers, preprints, DOI-bearing uploads, and the academic legitimacy layer.</p>
+            <a href="https://www.researchgate.net/profile/Andrew-Crook-6" target="_blank" rel="noopener">Open ResearchGate</a>
+          </div>
+          <div class="signal-item">
+            <strong>LinkedIn</strong>
+            <p>The public-facing Citizen Scientist thread and professional signal.</p>
+            <a href="https://www.linkedin.com/in/andrewjcrook/" target="_blank" rel="noopener">Open LinkedIn</a>
+          </div>
+        </div>
+        <div class="card">
+          <p>
+            GPDS is beginning to widen beyond a single book. For now, lightly. The site remains a quiet index, but the arc is opening: narrative, papers, and applied inquiry are beginning to speak to one another.
+          </p>
+          <p class="small">No feed. No noise. Just signal when there is something worth sharing.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2025–2026 GPDS.com</span>
+      <span>•</span>
+      <span>General Purpose Dynamic Systems</span>
+      <span>•</span>
+      <span>Protect the children. Preserve continuity.</span>
+    </footer>
+  </main>
+</body>
+</html>
