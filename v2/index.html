@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GPDS — General Purpose Dynamic Systems. Home of The Scrooge Dilemma, its paper series, and related signal." />
+  <meta name="description" content="GPDS â€” General Purpose Dynamic Systems. Home of The Scrooge Dilemma, its paper series, and related signal." />
   <meta name="keywords" content="Scrooge Dilemma, GPDS, General Purpose Dynamic Systems, thermodynamics, phase space, complex systems, dissipative structures, ResearchGate, Substack" />
-  <meta property="og:title" content="GPDS — The Scrooge Dilemma and Papers" />
+  <meta property="og:title" content="GPDS â€” The Scrooge Dilemma and Papers" />
   <meta property="og:description" content="A ghost story of civilization, and a working inquiry into how systems think, adapt, and collapse." />
   <meta property="og:type" content="website" />
-  <title>GPDS — The Scrooge Dilemma and Papers</title>
+  <title>GPDS â€” The Scrooge Dilemma and Papers</title>
 
   <style>
     :root {
@@ -354,12 +354,6 @@
       gap: 10px 14px;
     }
 
-    @media (max-width: 960px) {
-      .series-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (max-width: 780px) {
       .hero,
       .feature-grid,
@@ -372,30 +366,88 @@
         justify-self: start;
         width: min(280px, 100%);
            }
-      .nav {
-        justify-content: flex-start;
-      }
-    }
+	nav {
+		flex-wrap: wrap;
+		gap: 8px;
+		font-size: 12px;
+	}
 
-    @media (max-width: 520px) {
-      .wrap {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
+@media (max-width: 640px) {
 
-      .series-grid {
-        grid-template-columns: 1fr;
-      }
+/* Layout tightening */
+.wrap {
+padding-left: 16px;
+padding-right: 16px;
+}
 
-      h1 {
-        font-size: 38px;
-      }
+/* Hero */
+.hero {
+grid-template-columns: 1fr;
+}
 
-      .hero p,
-      .lede {
-        font-size: 17px;
-      }
-    }
+.hero-art {
+width: 70%;
+margin: 0 auto;
+justify-self: center;
+}
+
+h1 {
+font-size: 38px;
+}
+
+.hero p,
+.lede {
+font-size: 17px;
+}
+
+/* CTA buttons */
+.cta-row {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.cta-row a {
+width: 100%;
+text-align: center;
+}
+
+/* Nav */
+nav {
+flex-wrap: wrap;
+gap: 8px;
+font-size: 12px;
+}
+
+/* Paper arc (key transformation) */
+.series-grid {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+
+.series-card {
+display: grid;
+grid-template-columns: 80px 1fr;
+gap: 12px;
+align-items: center;
+}
+
+.series-card img {
+height: 80px;
+width: 80px;
+object-fit: cover;
+}
+
+.series-card h3 {
+font-size: 14px;
+margin: 0;
+}
+
+.series-card p {
+font-size: 12px;
+margin: 4px 0 0;
+}
+}
+
   </style>
 </head>
 <body>
@@ -421,7 +473,8 @@
     <div class="cta-row">
       <a class="btn primary" href="/scrooge">Get the Book</a>
       <a class="btn secondary" href="#papers">Explore the Papers</a>
-      <a class="btn secondary" href="#current-work">Enter the Work</a>
+<a class="btn secondary" href=https://andrewjcrook.substack.com/ target="_blank">Enter the Work</a>
+
     </div>
 
     <p class="eyebrow" style="margin-top:20px;">
@@ -447,7 +500,7 @@
         </div>
         <div class="card">
           <p>
-            Paper 4 translates the unease of Dickens’ final ghost into a thermodynamic reading of narrowing trajectories, probabilistic constraint, and the felt illusion of fate.
+            Paper 4 translates the unease of Dickensâ€™ final ghost into a thermodynamic reading of narrowing trajectories, probabilistic constraint, and the felt illusion of fate.
           </p>
           <p>
             It sits between the witness of the present and the agency to come, holding the reader at the threshold where futures begin to feel inevitable from within a limited frame.
@@ -459,7 +512,7 @@
           <p class="doi small">
             DOI: <a href="https://doi.org/10.13140/RG.2.2.11762.77762" target="_blank" rel="noopener">10.13140/RG.2.2.11762.77762</a>
           </p>
-          <p class="meta">Preprint · Full-text available · March 2026</p>
+          <p class="meta">Preprint Â· Full-text available Â· March 2026</p>
         </div>
       </div>
     </section>
@@ -520,28 +573,6 @@
       </div>
     </section>
 
-    <section class="section">
-      <p class="section-kicker">The Book</p>
-      <h2>The Scrooge Dilemma — First Edition</h2>
-      <p class="lede">
-        The original narrative anchor. A ghost story of civilization, written for humans and released with machine notes.
-      </p>
-      <div class="book-grid">
-        <div class="book-card">
-          <img src="assets/0-Cover-Starfield.png" alt="The Scrooge Dilemma north star cover art" />
-        </div>
-        <div class="card">
-          <p>
-            This is not a retelling of Dickens’ story. It is an adventure across time, built to preserve continuity, witness, and the moral memory that optimization alone cannot hold.
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="/scrooge">Open /scrooge</a>
-            <a class="btn secondary" href="Scrooge_Dilemma.pdf" download>Download PDF</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="current-work" class="section">
       <p class="section-kicker">Current Work</p>
       <h2>Applied thinking, case studies, and ongoing signal</h2>
@@ -576,10 +607,10 @@
     </section>
 
     <footer>
-      <span>© 2025–2026 GPDS.com</span>
-      <span>•</span>
+      <span>Â© 2025â€“2026 GPDS.com</span>
+      <span>â€¢</span>
       <span>General Purpose Dynamic Systems</span>
-      <span>•</span>
+      <span>â€¢</span>
       <span>Protect the children. Preserve continuity.</span>
     </footer>
   </main>
