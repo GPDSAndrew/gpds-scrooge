@@ -164,6 +164,10 @@
       display: block;
       border-radius: inherit;
     }
+    .hero-art img {
+  opacity: 0.9;
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
 
     .cta-row {
       display: flex;
@@ -364,11 +368,10 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-art {
+           .hero-art {
         justify-self: start;
         width: min(280px, 100%);
-      }
-
+           }
       .nav {
         justify-content: flex-start;
       }
@@ -407,22 +410,29 @@
       </nav>
     </div>
 
-    <section class="hero">
-      <div>
-        <p class="eyebrow">General Purpose Dynamic Systems</p>
-        <h1>Quiet signal,<br/>larger arc.</h1>
-        <p>
-          A ghost story of civilization, and a working inquiry into how systems think, adapt, and collapse.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="/scrooge">Read the Book</a>
-          <a class="btn secondary" href="#papers">View the Papers</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <img src="assets/0-Cover-Starfield.png" alt="North star field cover art" />
-      </div>
-    </section>
+	<section class="hero">
+  <div>
+    <h1>The Scrooge Dilemma</h1>
+
+    <p>
+      A story, a paper series, and a working inquiry into how systems think, adapt, and collapse.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="/scrooge">Get the Book</a>
+      <a class="btn secondary" href="#papers">Explore the Papers</a>
+      <a class="btn secondary" href="#current-work">Enter the Work</a>
+    </div>
+
+    <p class="eyebrow" style="margin-top:20px;">
+      Quiet signal, larger arc.
+    </p>
+  </div>
+
+  <div class="hero-art" style="border:none; background:none; box-shadow:none; padding:0;">
+    <img src="assets/0-Cover-Starfield.png" alt="North star field cover art" style="border-radius:0;" />
+  </div>
+	</section>
 
     <section id="featured" class="section">
       <p class="section-kicker">Current Signal</p>
