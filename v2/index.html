@@ -146,26 +146,26 @@ position: relative;
 overflow: hidden;    
 }
 .hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -80px;
-  bottom: 0;
-  width: 62%;
+content: "";
+position: absolute;
+top: 0;
+right: -260px;
+bottom: 0;
+width: 78%;
 
-  background-image: url("assets/0-Cover-Starfield.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+background-image: url("assets/0-Cover-Starfield.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 
-  opacity: 0.20;
-  pointer-events: none;
-  z-index: 0;
+opacity: 0.16;
+pointer-events: none;
+z-index: 0;
 
-  border-top-left-radius: 999px;
-  border-bottom-left-radius: 999px;
+border-top-left-radius: 999px;
+border-bottom-left-radius: 999px;
 
-  filter: saturate(1.05);
+filter: saturate(1.03);
 }
 .hero > div {
 position: relative;
@@ -416,17 +416,17 @@ padding-right: 16px;
 }
 
 /* Hero */
-.hero::after {
-right: -40px;
-width: 75%;
-opacity: 0.18;
-background-size: cover;
-background-position: center;
-}
 .hero {
 grid-template-columns: 1fr;
 }
 
+.hero::after {
+right: -180px;
+width: 88%;
+opacity: 0.15;
+background-size: cover;
+background-position: center;
+}
 h1 {
 font-size: 38px;
 }
