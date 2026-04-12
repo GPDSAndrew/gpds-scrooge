@@ -148,24 +148,23 @@ overflow: hidden;
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: -80px;
+  bottom: 0;
+  width: 62%;
+
+  background-image: url("assets/0-Cover-Starfield.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.20;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.22;
 
-  background-image:
-    radial-gradient(circle at 82% 45%,
-      transparent 0%,
-      transparent 40%,
-      rgba(5, 7, 11, 0.10) 52%,
-      rgba(5, 7, 11, 0.45) 62%,
-      rgba(5, 7, 11, 0.82) 72%,
-      rgba(5, 7, 11, 1) 80%),
-    url("assets/0-Cover-Starfield.png");
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
 
-  background-repeat: no-repeat, no-repeat;
-  background-size: 100% 100%, 760px 760px;
-  background-position: center, right -140px top -60px;
   filter: saturate(1.05);
 }
 .hero > div {
@@ -361,7 +360,13 @@ opacity: 0.65;
       aspect-ratio: 4 / 5;
       box-shadow: var(--glow);
     }
-
+.paper-art img,
+.series-card img,
+.book-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
     .signal-list {
       display: grid;
       gap: 12px;
@@ -412,9 +417,11 @@ padding-right: 16px;
 
 /* Hero */
 .hero::after {
-opacity: 0.20;
-background-size: 100% 100%, 300px 300px;
-background-position: center, center 62%;
+right: -40px;
+width: 75%;
+opacity: 0.18;
+background-size: cover;
+background-position: center;
 }
 .hero {
 grid-template-columns: 1fr;
