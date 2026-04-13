@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Scrooge Dilemma — First Edition. Download the free ebook and join the print release list." />
+  <meta property="og:title" content="The Scrooge Dilemma — First Edition" />
+  <meta property="og:description" content="A ghost story of civilization, written for humans and released with machine notes." />
+  <meta property="og:type" content="website" />
+  <title>The Scrooge Dilemma — First Edition</title>
+
+  <link rel="stylesheet" href="/assets/site.css" />
+
+  <style>
+    .book-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 20px 72px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-hero {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 18px;
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .book-hero::after {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      background-image: url("/assets/0-cover-art.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.30;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 10%;
+      filter: saturate(1.05);
+    }
+
+    .book-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .book-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .book-intro h1 {
+      margin: 0 0 12px;
+    }
+
+    .book-subtitle {
+      margin: 0 auto;
+      max-width: 34ch;
+      color: var(--muted);
+      font-size: 22px;
+    }
+
+    .download-panel,
+    .signup-panel,
+    .note-panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 22px;
+      backdrop-filter: blur(4px);
+    }
+
+    .download-panel {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .download-panel h2,
+    .signup-panel h2,
+    .note-panel h2 {
+      margin: 0 0 10px;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.15;
+    }
+
+    .download-panel p,
+    .signup-panel p,
+    .note-panel p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .book-meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--soft);
+      margin-top: 8px;
+    }
+
+    .book-actions {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .book-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .book-form label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--soft);
+      letter-spacing: 0.03em;
+    }
+
+    .book-form input {
+      width: 100%;
+      min-height: 46px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .book-form input::placeholder {
+      color: var(--soft);
+    }
+
+    .book-form button {
+      cursor: pointer;
+    }
+
+    .mini-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--soft);
+    }
+
+    @media (max-width: 640px) {
+      .book-page {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .book-hero {
+        padding: 28px 0 20px;
+      }
+
+      .book-hero::after {
+        width: 420px;
+        height: 420px;
+        left: 50%;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        opacity: 0.30;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .book-intro h1 {
+        font-size: 38px;
+      }
+
+      .book-subtitle,
+      .download-panel p,
+      .signup-panel p,
+      .note-panel p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="book-page">
+    <div class="topbar">
+      <div><a href="/" style="color: inherit; text-decoration: none;">GPDS</a></div>
+    </div>
+
+    <section class="book-hero">
+      <div class="book-intro">
+        <h1>The Scrooge Dilemma</h1>
+        <p class="book-subtitle">
+          Being a ghost story of civilization
+        </p>
+      </div>
+
+      <div class="download-panel">
+        <h2>Get the free ebook</h2>
+        <p>Download the first edition immediately.</p>
+        <div class="cta-row" style="display: flex; justify-content: center;">
+        <a class="btn primary" href="/scrooge/Scrooge_Dilemma.pdf" download>Download the free ebook</a>
+        </div>
+          </div>
+
+
+    <div class="signal-line">
+      <span>Protect play. Expand possibility.</span>
+    </div>
+    </section>
+    <section class="book-actions">
+      <div class="note-panel">
+        <h2>A note from the author</h2>
+        <p>I have endeavoured in this ghostly work to raise the Ghost of an Idea, one that may stir a long-forgotten seed and offer it nourishment.</p>
+        <p>This is not a retelling of Dickens’ story. You can read the original at any time. This is an adventure across time.</p>
+        <p>The ghosts in this book are not metaphors. They are mirrors.</p>
+        <p>May this book haunt your home pleasantly, and may no one wish to lay it down.</p>
+        <p>Your faithful friend and servant,</p>
+        <p><strong>A. J. C.</strong></p>
+        <p class="book-meta">December 2025</p>
+      </div>
+      <div class="signup-panel">
+        <h2>Pre-Print Discount Code</h2>
+        <p>
+          Want a discount code for when the print edition drops in late 2026? Join the short list. 
+        </p>
+        <form name="scrooge-print-list" method="POST" data-netlify="true" class="book-form">
+          <input type="hidden" name="form-name" value="scrooge-print-list" />
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+
+          <div class="cta-row">
+            <button class="btn secondary" type="submit">Notify Me</button>
+          </div>
+        </form>
+
+         </div>
+
+     
+
+      <div class="mini-links">
+        <span>Future print edition</span>
+        <span>•</span>
+        <span>Future audiobook</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
