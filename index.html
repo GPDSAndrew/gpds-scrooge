@@ -3,289 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GPDS — General Intelligence narratives and research. Download The Scrooge Dilemma (First Edition, Dec 2025) and explore related essays and references." />
-  <title>GPDS — Scrooge Dilemma (First Edition)</title>
-
-  <style>
-    :root{
-      --bg: #ffffff;
-      --ink: #111827;       /* near-black */
-      --muted: #4b5563;     /* gray */
-      --soft: #6b7280;      /* lighter gray */
-      --line: #e5e7eb;      /* light border */
-      --link: #0b6cff;
-      --linkHover: #084fbf;
-      --btnBg: #111827;
-      --btnHover: #0b1220;
-      --btnInk: #ffffff;
-      --chipBg: #f3f4f6;
-    }
-
-    *{ box-sizing: border-box; }
-    html, body { height: 100%; }
-    body{
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .wrap{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 22px;
-    }
-
-    header{
-      margin-bottom: 34px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      letter-spacing: 0.08em;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: var(--soft);
-      margin-bottom: 12px;
-    }
-
-    h1{
-      font-size: clamp(28px, 3.4vw, 40px);
-      line-height: 1.15;
-      margin: 0 0 10px 0;
-      font-weight: 700;
-    }
-
-    .subtitle{
-      margin: 0;
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 70ch;
-    }
-
-    a{
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover{ color: var(--linkHover); text-decoration: underline; }
-
-    .section{
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .kicker{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 600;
-      color: var(--soft);
-      font-size: 13px;
-      letter-spacing: 0.02em;
-      margin: 0 0 10px 0;
-    }
-
-    h2{
-      margin: 0 0 12px 0;
-      font-size: 22px;
-      line-height: 1.25;
-      font-weight: 700;
-    }
-
-    p{ margin: 10px 0; }
-
-    .note{
-      background: #fafafa;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 18px 18px;
-    }
-
-    .ctaRow{
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 14px;
-    }
-
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 16px;
-      border-radius: 10px;
-      border: 1px solid rgba(0,0,0,0.08);
-      background: var(--btnBg);
-      color: var(--btnInk);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-weight: 650;
-      font-size: 14px;
-      letter-spacing: 0.01em;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.06s ease, background 0.2s ease, border-color 0.2s ease;
-    }
-    .btn:hover{
-      background: var(--btnHover);
-      text-decoration: none;
-    }
-    .btn:active{ transform: translateY(1px); }
-
-    .btn.secondary{
-      background: #ffffff;
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-    .btn.secondary:hover{
-      background: #f9fafb;
-    }
-
-    .micro{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--soft);
-      font-size: 13px;
-    }
-
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 760px){
-      .grid{ grid-template-columns: 1.15fr 0.85fr; }
-    }
-
-    .card{
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 16px 16px;
-      background: #ffffff;
-    }
-
-    .chipRow{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .chip{
-      background: var(--chipBg);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    footer{
-      padding-top: 22px;
-      color: var(--soft);
-      font-size: 13px;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    .sep{ margin: 0 8px; color: #cbd5e1; }
-  </style>
+  <meta name="description" content="GPDS” General Purpose Dynamic Systems. Home of The Scrooge Dilemma, its paper series, and related signal." />
+  <meta name="keywords" content="Scrooge Dilemma, GPDS, General Purpose Dynamic Systems, thermodynamics, phase space, complex systems, dissipative structures, ResearchGate, Substack" />
+  <meta property="og:title" content="GPDS” The Scrooge Dilemma and Papers" />
+  <meta property="og:description" content="A ghost story of civilization, and a working inquiry into how dynamic systems emerge, adapt, and think." />
+  <meta property="og:type" content="website" />
+  <title>GPDS - The Scrooge Dilemma and Thermodynamic Papers</title>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
   <main class="wrap">
-    <header>
-      <div class="brand">GPDS.com</div>
-      <h1>The Scrooge Dilemma — First Edition</h1>
-      <p class="subtitle">
-        A ghost story of civilization; written for humans, released with machine notes.
+    <div class="topbar">
+      <div>GPDS</div>
+    </div>
+
+	<section class="hero">
+  <div>
+    <h1>The Scrooge Dilemma</h1>
+    <p>
+      A ghost story of civilization, and a working inquiry into how dynamic systems emerge, adapt, and think. 
+    </p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="/scrooge">Get the Book</a>
+      <a class="btn secondary" href="#papers">Explore the Papers</a>
+<a class="btn secondary" href="https://andrewjcrook.substack.com/" target="_blank">Enter the Work</a>
+    </div>
+</div>
+	</section>
+<div class="signal-line">
+<span>Quiet signal, larger arc.</span>
+</div>
+
+    <section id="featured" class="section">
+      <p class="section-kicker">Featured Paper</p>
+      <h2>The Ghost of Yet to Come: The Game of Fate</h2>
+      <p class="lede">
+        The future is not fixed. It is a field whose possibilities narrow as systems lose the capacity to adjust their trajectory within it.
       </p>
-    </header>
 
-    <section class="section">
-      <p class="kicker"></p>
-      <div class="grid">
-        <div class="note">
-          <h2>A note from the author</h2>
-          <p>
-            I have endeavoured in this ghostly work to raise the Ghost of an Idea, one that may stir a long-forgotten seed and offer it nourishment.
-          </p>
-          <p>
-            This is not a retelling of Dickens’ story. You can read the original at any time. This is an adventure across time.
-          </p>
-          <p>
-            The ghosts in this book are not metaphors. They are mirrors.
-          </p>
-          <p>
-            May this book haunt your home pleasantly, and may no one wish to lay it down.
-          </p>
-          <p>Your faithful friend and servant,</p>
-          <p><strong>A. J. C.</strong></p>
-          <p class="micro">December 2025</p>
-
-          <div class="ctaRow">
-            <!-- Keep file name exactly as it exists in your repo -->
-            <a class="btn" href="Scrooge_Dilemma.pdf" download>Download the PDF</a>
-          </div>
+      <div class="feature-grid">
+        <div class="paper-art">
+          <img src="assets/4-Yet_to_Come-Eclipse.png" alt="Paper 4 eclipse cover art" />
         </div>
-
-        <aside class="card">
-          <p class="kicker">Links</p>
-          <p style="margin-top:0;">
-            <a href="https://www.researchgate.net/profile/Andrew-Crook-6" target="_blank" rel="noopener">ResearchGate profile</a><br/>
-            <a href="https://andrewjcrook.substack.com/" target="_blank" rel="noopener">Substack</a><br/>
-            <a href=" https://www.linkedin.com/in/andrewjcrook/" target="_blank" rel="noopener">LinkedIn</a>
+        <div class="card">
+          <p>
+            Paper 4 translates the unease of Dicken’s final ghost into a thermodynamic reading of narrowing trajectories, probabilistic constraint, and the felt illusion of fate.
           </p>
-          <div class="chipRow" aria-label="Tags">
-            <span class="chip">continuity</span>
-            <span class="chip">children</span>
-            <span class="chip">civilizational memory</span>
-            <span class="chip">GI narrative</span>
-            <span class="chip">Citizen First</span>
-            <span class="chip">Scrooge Dilemma</span>
-          </div>
-        </aside>
+          <p>
+            It sits between the witness of the present and the agency to come, holding the reader at the threshold where futures begin to feel inevitable from within a limited frame.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://www.researchgate.net/publication/402553642_Scrooge_Dilemma-Ghost_of_Yet_to_Come-The_Game_of_Fate" target="_blank" rel="noopener">Read on ResearchGate</a>
+          </div> 
+       <p>
+             DOI: <a href="https://doi.org/10.13140/RG.2.2.11762.77762" target="_blank" rel="noopener noreferrer">10.13140/RG.2.2.11762.77762</a>
+          </p>
+          <p class="meta">Preprint · Full-text available · March 2026</p>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <p class="kicker">Featured</p>
-      <h2>Recent Papers</h2>
-      <p>
-        “Marley's Ghost: His Warning Examined” (ResearchGate):
-        <a href="https://www.researchgate.net/publication/399198075" target="_blank" rel="noopener">
-          read here
-        </a>.
-      <p>
-        “The Past Ghost: Why We Forget and what must a civilization remember to remain a civilization” (ResearchGate):
-        <a href="https://www.researchgate.net/publication/399466440" target="_blank" rel="noopener">
-          read here
-        </a>.
-      <p>
-        “The Present Ghost: Witness, not War” (ResearchGate):
-        <a href="https://www.researchgate.net/publication/399797436_The_Present_Ghost_Witness_not_War" target="_blank" rel="noopener">
-          read here
-        </a>.
+    <section id="papers" class="section">
+      <p class="section-kicker">Paper Sequence</p>
+      <h2>The five-paper arc</h2>
+      <p class="lede">
+        A quiet sequence of essays moving from warning and memory through witness, constraint, and agency.
       </p>
-      <p class="micro">
-        (More essays will live here as a quiet index. No feed, no noise.)
-      </p>
+
+      <div class="series-grid">
+        <article class="series-card">
+          <div class="thumb"><img src="assets/1-Marley-Chain.png" alt="Marley chain cover art" /></div>
+          <h3>1. Marley</h3>
+          <p>The warning. Constraint appears before collapse is recognized.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399198075" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="assets/2-Past-Fossil.png" alt="Past fossil leaf cover art" /></div>
+          <h3>2. Past</h3>
+          <p>Why we forget. Memory, continuity, and the cost of civilizational amnesia.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399466440" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="assets/3-Present-Cloud.png" alt="Present cloud cover art" /></div>
+          <h3>3. Present</h3>
+          <p>Witnessing. The observer learns to see before reaching for war.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/399797436_The_Present_Ghost_Witness_not_War" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="assets/4-Yet_to_Come-Eclipse.png" alt="Future eclipse cover art" /></div>
+          <h3>4. Future</h3>
+          <p>Fate as narrowing trajectories in phase space.</p>
+          <div class="links">
+            <a href="https://www.researchgate.net/publication/402553642_Scrooge_Dilemma-Ghost_of_Yet_to_Come-The_Game_of_Fate" target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <article class="series-card">
+          <div class="thumb"><img src="assets/5-End_of_it-Candle.png" alt="Agency candle cover art" /></div>
+          <h3>5. End of It</h3>
+          <p>Forthcoming. The return of local agency, fragile and directional.</p>
+          <div class="links">
+            <span class="small">Coming soon</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section class="section">
-      <p class="kicker">Contact</p>
-      <p class="micro" style="margin-top:0;">
-        If you want to send a note, reply wherever you found this link; or connect via ResearchGate / Substack / Linkedin.
-      </p>
+    <section id="current-work" class="section">
+      <p class="section-kicker">Current Work</p>
+      <h2>Enter the work</h2>
+      <p class="lede">
+        ResearchGate carries the papers. Substack carries the live edge: interpretation, case studies, and the unfolding practice of thinking with AI. </p>
+      <div class="signal-grid">
+        <div class="card signal-list">
+          <div class="signal-item">
+            <strong>Substack</strong>
+            <p>Long-form writing, active interpretation, and early case-study signal.</p>
+            <a href="https://andrewjcrook.substack.com/" target="_blank" rel="noopener">Open Substack</a>
+          </div>
+          <div class="signal-item">
+            <strong>ResearchGate</strong>
+            <p>Papers, preprints, DOI-bearing uploads, and the academic legitimacy layer.</p>
+            <a href="https://www.researchgate.net/profile/Andrew-Crook-6" target="_blank" rel="noopener">Open ResearchGate</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-      <span>© 2025–2026 GPDS.com</span>
-      <span class="sep">•</span>
-      <span>First Edition release: Dec 2025</span>
-      <span class="sep">•</span>
-      <span>“Protect the children. Preserve continuity.”</span>
+      <span>© 2025 - 2026 GPDS.com</span>
+      <span></span>
+      <span>General Purpose Dynamic Systems</span>
+      <span></span>
+      <span>Protect play. Expand possibility.</span>
     </footer>
   </main>
 </body>
