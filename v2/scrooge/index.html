@@ -8,7 +8,9 @@
   <meta property="og:description" content="A ghost story of civilization, written for humans and released with machine notes." />
   <meta property="og:type" content="website" />
   <title>The Scrooge Dilemma — First Edition</title>
+
   <link rel="stylesheet" href="/v2/assets/site.css" />
+
   <style>
     .book-page {
       max-width: 860px;
@@ -19,42 +21,37 @@
     }
 
     .book-hero {
-  position: relative;
-  overflow: hidden;
-  display: grid;
-  gap: 18px;
-  padding: 48px 0 32px;
-  border-bottom: 1px solid var(--line);
-}
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 18px;
+      padding: 48px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
 
-.book-hero::after {
-  content: "";
-  position: absolute;
+    .book-hero::after {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      left: 50%;
+      top: 42%;
+      transform: translate(-50%, -50%);
+      background-image: url("/v2/assets/0-cover-art.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.14;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 50%;
+      filter: brightness(0.85) saturate(1.05);
+    }
 
-  width: 760px;
-  height: 760px;
-
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  background-image: url("/v2/assets/0-cover-art.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.16;
-  pointer-events: none;
-  z-index: 0;
-
-  border-radius: 50%;
-  filter: brightness(0.85) saturate(1.05);
-}
-
-.book-hero > * {
-  position: relative;
-  z-index: 1;
-}
+    .book-hero > * {
+      position: relative;
+      z-index: 1;
+    }
 
     .book-intro {
       max-width: 760px;
@@ -63,7 +60,7 @@
     }
 
     .book-intro h1 {
-      margin-bottom: 12px;
+      margin: 0 0 12px;
     }
 
     .book-subtitle {
@@ -71,13 +68,6 @@
       max-width: 34ch;
       color: var(--muted);
       font-size: 19px;
-    }
-
-    .book-actions {
-      display: grid;
-      gap: 18px;
-      max-width: 760px;
-      margin: 0 auto;
     }
 
     .download-panel,
@@ -88,6 +78,11 @@
       border-radius: var(--radius);
       padding: 22px;
       backdrop-filter: blur(4px);
+    }
+
+    .download-panel {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .download-panel h2,
@@ -104,6 +99,20 @@
       margin: 0 0 16px;
       color: var(--muted);
       font-size: 17px;
+    }
+
+    .book-meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--soft);
+      margin-top: 8px;
+    }
+
+    .book-actions {
+      display: grid;
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .book-form {
@@ -137,13 +146,6 @@
       cursor: pointer;
     }
 
-    .book-meta {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      color: var(--soft);
-      margin-top: 8px;
-    }
-
     .mini-links {
       display: flex;
       flex-wrap: wrap;
@@ -153,68 +155,75 @@
       color: var(--soft);
     }
 
-   @media (max-width: 640px) {
-  .book-hero {
-    padding: 36px 0 24px;
-    }
+    @media (max-width: 640px) {
+      .book-page {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
 
-  .book-hero::after {
-    width: 420px;
-    height: 420px;
-    right: -220px;
-    top: 38%;
-    transform: translateY(-50%);
-    opacity: 0.14;
-    }
+      .book-hero {
+        padding: 28px 0 20px;
+      }
 
-  .book-intro h1 {
-    font-size: 38px;
-    }
+      .book-hero::after {
+        width: 420px;
+        height: 420px;
+        left: 50%;
+        top: 34%;
+        transform: translate(-50%, -50%);
+        opacity: 0.12;
+        background-size: cover;
+        background-position: center;
+      }
 
-  .book-subtitle {
-    font-size: 17px;
+      .book-intro h1 {
+        font-size: 38px;
+      }
+
+      .book-subtitle,
+      .download-panel p,
+      .signup-panel p,
+      .note-panel p {
+        font-size: 16px;
+      }
     }
- }
   </style>
 </head>
+
 <body>
   <main class="book-page">
     <div class="topbar">
-      <div><a href="/" style="color: inherit; text-decoration: none;">GPDS</a></div>
+      <div><a href="/v2/" style="color: inherit; text-decoration: none;">GPDS</a></div>
     </div>
 
     <section class="book-hero">
-      <div class="book-cover">
-        <img src="/v2/assets/0-cover-art.png" alt="The Scrooge Dilemma first edition cover" />
-      </div>
-
       <div class="book-intro">
         <h1>The Scrooge Dilemma — First Edition</h1>
-        <p class="book-subtitle">A ghost story of civilization, written for humans and released with machine notes.</p>
+        <p class="book-subtitle">
+          A ghost story of civilization, written for humans and released with machine notes.
+        </p>
+      </div>
+
+      <div class="download-panel">
+        <h2>Get the free ebook</h2>
+        <p>Download the first edition immediately. One click, no friction.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="/v2/Scrooge_Dilemma.pdf" download>Download the free ebook</a>
+        </div>
+        <p class="book-meta">PDF · First Edition</p>
       </div>
     </section>
 
     <div class="signal-line">
       <span>Protect play. Expand possibility.</span>
     </div>
-<section class="book-art">
-  <div class="book-cover">
-    <img src="/v2/assets/0-cover-art.png" alt="The Scrooge Dilemma cover">
-  </div>
-</section>
-    <section class="book-actions">
-      <div class="download-panel">
-        <h2>Get the free ebook</h2>
-        <p>Download the first edition immediately. One click, no friction.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="/Scrooge_Dilemma.pdf" download>Download the free ebook</a>
-        </div>
-        <p class="book-meta">PDF · First Edition</p>
-      </div>
 
+    <section class="book-actions">
       <div class="signup-panel">
         <h2>Join the print release list</h2>
-        <p>Want a discount code when the print/audio edition drop? Join the short list and we’ll let you know when preorder begins.</p>
+        <p>
+          Want a discount code when the print edition opens? Join the short list and we’ll let you know when preorder begins.
+        </p>
 
         <form name="scrooge-print-list" method="POST" data-netlify="true" class="book-form">
           <input type="hidden" name="form-name" value="scrooge-print-list" />
@@ -257,4 +266,3 @@
   </main>
 </body>
 </html>
-
