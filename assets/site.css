@@ -143,7 +143,7 @@ overflow: hidden;
   top: 50%;
   transform: translateY(-50%);
 
-  background-image: url("0-Cover-Starfield.png");
+  background-image: url("0-cover-starfield_hero.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -152,7 +152,7 @@ overflow: hidden;
   pointer-events: none;
   z-index: 0;
 
-  border-radius: 25%;
+  border-radius: 50%;
 
   filter: saturate(1.10);
 }
@@ -409,19 +409,19 @@ padding-right: 16px;
 .hero {
 grid-template-columns: 1fr;
 }
-
 .hero::after {
-width: 420px;
-height: 420px;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    right: auto;
+    top: auto;
+    transform: none;
 
-right: -180px;
-top: 58%;
-transform: translateY(-50%);
-
-opacity: 0.25;
-background-size: cover;
-background-position: center;
-}
+    opacity: 0.22;
+    background-size: cover;
+    background-position: 72% center;
+    border-radius: 0;
+  }
 h1 {
 font-size: 38px;
 }
