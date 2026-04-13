@@ -19,28 +19,42 @@
     }
 
     .book-hero {
-      display: grid;
-      gap: 24px;
-      padding: 34px 0 28px;
-      border-bottom: 1px solid var(--line);
-    }
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 18px;
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--line);
+}
 
-    .book-cover {
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      box-shadow: var(--glow);
-    }
+.book-hero::after {
+  content: "";
+  position: absolute;
 
-    .book-cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  width: 760px;
+  height: 760px;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: url("/v2/assets/0-cover-art.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+
+  border-radius: 50%;
+  filter: brightness(0.85) saturate(1.05);
+}
+
+.book-hero > * {
+  position: relative;
+  z-index: 1;
+}
 
     .book-intro {
       max-width: 760px;
@@ -139,19 +153,28 @@
       color: var(--soft);
     }
 
-    @media (max-width: 640px) {
-      .book-page {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .book-subtitle,
-      .download-panel p,
-      .signup-panel p,
-      .note-panel p {
-        font-size: 16px;
-      }
+   @media (max-width: 640px) {
+  .book-hero {
+    padding: 36px 0 24px;
     }
+
+  .book-hero::after {
+    width: 420px;
+    height: 420px;
+    right: -220px;
+    top: 38%;
+    transform: translateY(-50%);
+    opacity: 0.14;
+    }
+
+  .book-intro h1 {
+    font-size: 38px;
+    }
+
+  .book-subtitle {
+    font-size: 17px;
+    }
+ }
   </style>
 </head>
 <body>
@@ -174,7 +197,11 @@
     <div class="signal-line">
       <span>Protect play. Expand possibility.</span>
     </div>
-
+<section class="book-art">
+  <div class="book-cover">
+    <img src="/v2/assets/0-cover-art.png" alt="The Scrooge Dilemma cover">
+  </div>
+</section>
     <section class="book-actions">
       <div class="download-panel">
         <h2>Get the free ebook</h2>
