@@ -148,13 +148,13 @@ overflow: hidden;
   background-size: cover;
   background-position: center;
 
-  opacity: 0.25;
+  opacity: 0.30;
   pointer-events: none;
   z-index: 0;
 
-  border-radius: 50%;
+  border-radius: 25%;
 
-  filter: saturate(1.03);
+  filter: saturate(1.10);
 }
 .hero > div {
 position: relative;
@@ -418,7 +418,7 @@ right: -180px;
 top: 58%;
 transform: translateY(-50%);
 
-opacity: 0.20;
+opacity: 0.25;
 background-size: cover;
 background-position: center;
 }
