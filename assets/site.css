@@ -414,7 +414,7 @@ grid-template-columns: 1fr;
     height: 100%;
     inset: 0;
     right: auto;
-    top: auto;
+    top: -20%;
     transform: none;
 
     opacity: 0.22;
