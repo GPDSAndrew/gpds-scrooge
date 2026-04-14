@@ -419,7 +419,7 @@ grid-template-columns: 1fr;
 
     opacity: 0.22;
     background-size: cover;
-    background-position: -20% center;
+    background-position: 0% center;
     border-radius: 0;
   }
 h1 {
