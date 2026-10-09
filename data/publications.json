@@ -1,0 +1,78 @@
+{
+  "schema": "gpds.publications.v1",
+  "updated": "2026-10-08",
+  "author": {
+    "name": "Andrew Joseph Crook",
+    "orcid": "https://orcid.org/0009-0001-9599-1673"
+  },
+  "publications": [
+    {
+      "id": "wifs",
+      "collection": "Independent research",
+      "title": "When Intelligence Fails Successfully",
+      "subtitle": "What OpenAI’s Navier–Stokes breakthrough teaches us about human agency and the rise of General Intelligence",
+      "published": "2026-10-05",
+      "type": "Preprint · independent research commentary",
+      "doi": "10.5281/zenodo.23167450",
+      "url": "https://doi.org/10.5281/zenodo.23167450",
+      "summary": "Frontier AI can expand intellectual capability while weakening the shared conditions that regenerate useful intelligence. This paper proposes Blackout and Whiteout as possible failure boundaries and provenance, reciprocity, triage and forking as responses.",
+      "featured": true,
+      "provenance": true
+    },
+    {
+      "id": "crh",
+      "collection": "Independent research",
+      "title": "The Common Relationship Hypothesis",
+      "subtitle": "A Provenance Note on Three Observational Domains and the Search for a Shared Invariant",
+      "published": "2026-09-17",
+      "type": "Preprint · hypothesis / provenance note",
+      "doi": "10.5281/zenodo.22819432",
+      "url": "https://doi.org/10.5281/zenodo.22819432",
+      "summary": "A bounded question asking whether galactic dynamics, cosmological redshift and the cosmic microwave background could reflect a shared, presently undefined relational structure. The note records nonclaims and conditions under which the hypothesis fails.",
+      "featured": false,
+      "provenance": true
+    },
+    {
+      "id": "fate",
+      "collection": "The Scrooge Dilemma",
+      "title": "The Ghost of Yet to Come: The Game of Fate",
+      "published": "2026-03",
+      "type": "Preprint",
+      "doi": "10.13140/RG.2.2.11762.77762",
+      "url": "https://doi.org/10.13140/RG.2.2.11762.77762",
+      "substack": "https://andrewjcrook.substack.com/p/the-ghost-of-yet-to-come-the-game",
+      "summary": "Fate as a human interpretation of narrowing possible trajectories under constraint.",
+      "featured": false
+    },
+    {
+      "id": "present",
+      "collection": "The Scrooge Dilemma",
+      "title": "The Present Ghost: Witness, not War",
+      "type": "Preprint",
+      "url": "https://www.researchgate.net/publication/399797436_The_Present_Ghost_Witness_not_War",
+      "substack": "https://andrewjcrook.substack.com/p/the-present-ghost-witness-not-war",
+      "summary": "Witnessing before reaction.",
+      "featured": false
+    },
+    {
+      "id": "past",
+      "collection": "The Scrooge Dilemma",
+      "title": "The Ghost of the Past: Why We Forget",
+      "type": "Preprint",
+      "url": "https://www.researchgate.net/publication/399466440",
+      "substack": "https://andrewjcrook.substack.com/p/the-ghost-of-the-past-why-we-forget",
+      "summary": "Memory, continuity and civilizational forgetting.",
+      "featured": false
+    },
+    {
+      "id": "marley",
+      "collection": "The Scrooge Dilemma",
+      "title": "Marley’s Warning Examined",
+      "type": "Preprint",
+      "url": "https://www.researchgate.net/publication/399198075",
+      "substack": "https://andrewjcrook.substack.com/p/marleys-warning-examined",
+      "summary": "Recognizing constraints before collapse.",
+      "featured": false
+    }
+  ]
+}
